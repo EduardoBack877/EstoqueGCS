@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Itens_noestoque" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="147a55e2-159f-451f-a232-3d80ba33da5c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DB Estoque Report"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT p.id, p.descricao AS "Produto", p.cor AS Cor, p.marca AS Marca, g.descricao as Grupo, p.qtd as QtdEstoque 
+FROM produto p
+LEFT JOIN grupoproduto g ON g.id = p.codgrupo;]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="Produto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Produto"/>
+		<property name="com.jaspersoft.studio.field.label" value="Produto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="cor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cor"/>
+		<property name="com.jaspersoft.studio.field.label" value="cor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="marca" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="marca"/>
+		<property name="com.jaspersoft.studio.field.label" value="marca"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<field name="grupo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="grupo"/>
+		<property name="com.jaspersoft.studio.field.label" value="grupo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="grupoproduto"/>
+	</field>
+	<field name="qtdestoque" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="qtdestoque"/>
+		<property name="com.jaspersoft.studio.field.label" value="qtdestoque"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="550" height="30" uuid="aa5155a8-9e69-4d88-89fd-84a323df8ebd"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Produtos no Estoque]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="30" uuid="95aa443c-4bcc-4c4a-9b69-b34034cd653e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d276266-bab7-4b35-8db5-d3112be35a81"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="100" height="30" uuid="6279416e-c7e2-45e0-96d3-d1dda249037b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c11b05c5-6434-4a81-bb52-7c3fa0e292df"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="0" width="100" height="30" uuid="bd500bbf-c0cd-46c7-9ef5-e60e77bc428b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73eb550e-1cce-4eee-a3c4-7edc6306fa4a"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="100" height="30" uuid="bbfae4e5-040e-4c1f-b1bc-4dccd24d45e2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="755a93ac-eec4-4306-a397-a11face812cd"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="100" height="30" uuid="76f242ab-5f1c-45a7-bbac-48515fdf5e07">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59b9f9fc-a2e5-4c21-87fc-b78845237d00"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grupo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="80" height="30" uuid="c0ab193e-65a8-4b02-b8ca-b9848893bafc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1956e218-e0ba-44f9-bc09-80a9ceb527b3"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qtd Estoque]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="60" height="30" uuid="c27d519a-5afa-499f-b39d-7d39d7fab9f0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d276266-bab7-4b35-8db5-d3112be35a81"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="10" width="100" height="30" uuid="db3b8d2c-bec9-478e-939a-0620ae776c01">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c11b05c5-6434-4a81-bb52-7c3fa0e292df"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Produto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="10" width="100" height="30" uuid="30491c7c-7f37-4177-a125-bc87c6311794">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73eb550e-1cce-4eee-a3c4-7edc6306fa4a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="10" width="100" height="30" uuid="f7c5393b-25c4-48da-ab14-5a0ef1e9c4de">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="755a93ac-eec4-4306-a397-a11face812cd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="10" width="100" height="30" uuid="2b56c3dc-5cce-43ac-af80-dbede91e125b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59b9f9fc-a2e5-4c21-87fc-b78845237d00"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{grupo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="10" width="80" height="30" uuid="09e29485-8ebe-40a2-adc5-f5bfc29bbcb0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1956e218-e0ba-44f9-bc09-80a9ceb527b3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{qtdestoque}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
