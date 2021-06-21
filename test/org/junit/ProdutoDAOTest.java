@@ -1,4 +1,4 @@
-/*package org.junit;
+package org.junit;
 
 
 import apoio.ConexaoBD;
@@ -44,4 +44,4 @@ public class ProdutoDAOTest {
      assertTrue(aux == true);
  
     }
-}*/
+}
